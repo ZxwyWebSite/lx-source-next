@@ -44,7 +44,7 @@ MG：由于上游接口更新，原 `malbum` 方式失效，内置接口也只�
 
 KW：还是原版 DES 接口，经历了两波大规模修复，不知道还能活多久。
 
-KG：概念版真香。请使用 [MakcRe/KuGouMusicApi](https://github.com/MakcRe/KuGouMusicApi) 项目登录或手动抓包。
+KG：暂未完善。请使用 [MakcRe/KuGouMusicApi](https://github.com/MakcRe/KuGouMusicApi) 项目登录或手动抓包。
 
 TX：南山必胜客绿尸寒警告，接口限制严格，无法免费听歌，现已移除内置实现。
 
@@ -86,6 +86,18 @@ _不用多说了吧_
 
 `mv`：`240p` / `360p` / `480p` / `720p` / `1080p`
 
+查询参数：
+
+**jmp**：链接跳转
+
+302 重定向到解析结果链接，若发生错误以 json 形式返回。
+
+支持 `url` / `mv` 方式
+
+**key**：接口密钥
+
+适用于无法设置请求头的情况。
+
 ---
 
 **脚本下载**：`/api/v0/lx-script.js`
@@ -110,6 +122,8 @@ _不用多说了吧_
 
 也支持在 `/api/v1/search` 以查询字符串方式传入
 
+或者 `/api/v1/search/{pt}/{t}/{q}?pg=1&sz=10`
+
 `pt`：平台二字码，仅支持 `wy`
 
 `t`：`type` 查询类型，目前支持 `so`：单曲 `ly`：歌词
@@ -131,6 +145,33 @@ _不用多说了吧_
 **缓存文件**：`/api/v1/file/{path}`
 
 路径格式：`{source}/{musicid}/{quality}.{ext}`
+
+**听歌识曲**：`/api/v1/test/match`
+
+参考 `/match/match.html` 实现
+
+---
+
+### 使用方式：
+
+默认监听地址 `127.0.0.1:1011,1101`，前者为保持兼容，在 类 Unix 设备上非特权用户一般无法监听，建议使用 `:1101` 端口。
+
+启动程序后在 `data/conf.toml` 的 `[Auth.ApiPass].Value` 找到自动生成的接口密钥，复制备用。
+
+洛雪导入脚本 `http://127.0.0.1:1101/api/v0/lx-script.js?key={key}`
+
+或使用网页版（仅供测试）
+
+- 统计信息 `/status.html`
+- 解析系统 `/outer`
+- 音乐搜索 `/search`
+- 听歌识曲 `/match`
+
+其中听歌识曲需要在 HTTPS 或本地环境（127.0.0.1）使用，否则无法开启麦克风权限。
+
+或在 `chrome://flags/#unsafely-treat-insecure-origin-as-secure` 中填写对应地址 `http://192.168.10.22:1101`（仅供测试）
+
+配置热重载功能现处于“能用”的状态，即基本不会出现什么致命错误，但会导致缓存清空，与重启程序没什么差别。
 
 ---
 
