@@ -6,7 +6,7 @@
 
 时隔一年，又和大家见面啦！😊😊😊
 
-明天就开学了，高三以后基本就没时间继续维护了，能续多久用多久吧。
+高三以后基本就没时间继续维护了，能续多久用多久吧。
 
 —— Zxwy 2025/08/31 : )
 
@@ -160,6 +160,8 @@ _不用多说了吧_
 
 洛雪导入脚本 `http://127.0.0.1:1101/api/v0/lx-script.js?key={key}`
 
+或 `http://127.0.0.1:1101/api/v0/script` (`v1.1.7+`)
+
 或使用网页版（仅供测试）
 
 - 统计信息 `/status.html`
@@ -172,6 +174,21 @@ _不用多说了吧_
 或在 `chrome://flags/#unsafely-treat-insecure-origin-as-secure` 中填写对应地址 `http://192.168.10.22:1101`（仅供测试）
 
 配置热重载功能现处于“能用”的状态，即基本不会出现什么致命错误，但会导致缓存清空，与重启程序没什么差别。
+
+---
+
+新版使用自动 URL 补全功能，如有反向代理请确保以下请求头被正确添加：
+
+```nginx
+# 添加过 Host 就不用了
+proxy_set_header X-Forwarded-Host $http_host;
+# 使用 https 的建议添加
+proxy_set_header X-Forwarded-Proto $scheme;
+# 外部非标准端口需要
+proxy_set_header X-Forwarded-Port $server_port;
+# 二级目录支持有限，不建议使用
+proxy_set_header X-Forwarded-Prefix '/lxs';
+```
 
 ---
 
