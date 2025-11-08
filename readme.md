@@ -196,6 +196,21 @@ proxy_set_header X-Forwarded-Port $server_port;
 proxy_set_header X-Forwarded-Prefix '/lxs';
 ```
 
+<details>
+<summary>二级目录示例 (v1.1.10 完整支持)</summary>
+
+```nginx
+location ^~ /bg/ {
+    proxy_pass http://127.0.0.1:1101/;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header X-Forwarded-Prefix '/bg';
+}
+```
+</details>
+
 ---
 
 <!-- ### 项目架构：
