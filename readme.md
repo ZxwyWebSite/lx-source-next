@@ -24,6 +24,18 @@
 
 ---
 
+### 演示站
+
+**仅供演示，不提供付费内容解析**
+
+**`Serv00`:** [演示歌曲](http://31.186.83.254:16646/outer/#/url/wy/1999253939) / [音乐搜索](http://31.186.83.254:16646/search/) / [数据统计](http://31.186.83.254:16646/status.html)
+
+**`Render`:** [演示歌曲](https://lxsrcs.onrender.com/outer/#/url/wy/2143960009) / [音乐搜索](https://lxsrcs.onrender.com/search/) / [数据统计](https://lxsrcs.onrender.com/status.html) / [听歌识曲](https://lxsrcs.onrender.com/match/)
+
+首次加载可能较慢，请耐心等待，缓存之后速度会大幅提升
+
+---
+
 ### 更新内容
 
 **本工具并不面向新手，发布前已进行充分 ~~（一天）~~ 的测试，请先充分阅读文档，解决不了再发帖求助。**
@@ -209,7 +221,20 @@ location ^~ /bg/ {
     proxy_set_header X-Forwarded-Prefix '/bg';
 }
 ```
+
 </details>
+
+---
+
+### 命令行工具：
+
+```sh
+# bash
+./lxsrcs -m
+
+# cmd
+lxsrcs.exe -m
+```
 
 ---
 
