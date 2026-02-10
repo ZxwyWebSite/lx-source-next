@@ -30,7 +30,9 @@
 
 **`Serv00`:** [演示歌曲](http://31.186.83.254:16646/outer/#/url/wy/1999253939) / [音乐搜索](http://31.186.83.254:16646/search/) / [数据统计](http://31.186.83.254:16646/status.html)
 
-**`Render`:** [演示歌曲](https://lxsrcs.onrender.com/outer/#/url/wy/2143960009) / [音乐搜索](https://lxsrcs.onrender.com/search/) / [数据统计](https://lxsrcs.onrender.com/status.html) / [听歌识曲](https://lxsrcs.onrender.com/match/)
+**~~`Render`:~~** [演示歌曲](https://lxsrcs.onrender.com/outer/#/url/wy/2143960009) / [音乐搜索](https://lxsrcs.onrender.com/search/) / [数据统计](https://lxsrcs.onrender.com/status.html) / [听歌识曲](https://lxsrcs.onrender.com/match/)
+
+**`Netify`:** [演示歌曲](https://lxs.1008.cf/outer/#/url/wy/2609419459) / [音乐搜索](https://lxs.1008.cf/search/) / [数据统计](https://lxs.1008.cf/status.html) / [听歌识曲](https://lxs.1008.cf/match/) / [播放列表](https://lxs.1008.cf/pls/)
 
 首次加载可能较慢，请耐心等待，缓存之后速度会大幅提升
 
